@@ -1,0 +1,207 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /* Dourado */
+  --first-color: hsl(45, 85%, 50%);
+  --first-color-light: hsl(45, 90%, 65%);
+  --first-color-alt: hsl(40, 80%, 45%);
+
+  /* Vermelho escuro */
+  --second-color: hsl(0, 65%, 35%);
+
+  /* Base escura */
+  --dark-color: hsl(0, 0%, 8%);
+  --body-color: hsl(0, 0%, 6%);
+  --container-color: hsl(0, 0%, 12%);
+
+  /* Branco suave */
+  --white-color: hsl(0, 0%, 95%);
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CONTAINER ===============*/
+.container {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+  padding: 3rem 0;
+  background-color: #221e17;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.galeria-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;   /* 👈 empilha */
+  align-items: center;
+}
+
+
+#galeria h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--first-color);
+  position: relative;
+}
+
+/*=============== CARD ===============*/
+.card__container {
+  width: 100%;
+  padding-block: 5rem;
+}
+
+.card__content {
+  margin-inline: 1.75rem;
+  border-radius: 1.25rem;
+  overflow: visible;
+  min-height: 460px; /* evita colapso */
+}
+
+.swiper-wrapper {
+  min-height: 420px;
+  align-items: center;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/*=============== CARD ARTICLE ===============*/
+.card__article {
+  width: 300px;
+  height: 420px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-color: var(--first-color-light);
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card__article:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 12px 30px hsla(45, 85%, 50%, 0.45),   /* dourado */
+    0 25px 60px hsla(40, 80%, 45%, 0.35),   /* dourado escuro */
+    0 40px 80px rgba(0, 0, 0, 0.45);
+}
+
+/*=============== IMAGE ===============*/
+.card__image {
+  position: absolute;
+  inset: 0;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  z-index: 2;
+}
+
+/*=============== SHADOW ===============*/
+.card__shadow {
+  position: absolute;
+  inset: -120%;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--first-color-light) 0%,
+      var(--first-color) 35%,
+      var(--first-color-alt) 60%,
+      transparent 70%
+    );
+
+  filter: blur(60px);
+  opacity: .85;
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*=============== SWIPER NAV ===============*/
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  font-size: 3rem;
+  color: var(--second-color);
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+/*=============== PAGINATION ===============*/
+.swiper-pagination-bullet {
+  background-color: hsl(212, 32%, 40%);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--second-color);
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (min-width: 768px) {
+  .card__content {
+    margin-inline: 3rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .card__container {
+    max-width: 1120px;
+  }
+
+  .swiper-button-prev {
+    left: -1rem;
+  }
+
+  .swiper-button-next {
+    right: -1rem;
+  }
+}
