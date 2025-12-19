@@ -13,29 +13,35 @@
     <!--cabeçalho -->
     <header>
         <div class="logo">
-            <h1>Barbearia Santos</h1>
+            <h1 class="logotexto">Barbearia Santos</h1>
         </div>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
+            <ul id="menu">
+                <li><a href="#mapinicio">Home</a></li>
+                <li><a href="#mapsobre">Sobre</a></li>
+                <li><a href="#mapservicos">Serviços</a></li>
                 <li><a href="#equipe">Equipe</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
     </header>
+        <div id="mapinicio"></div>
 
     <section id="home">
-    <div class="banner">
-        <div class="banner-content">
-            <h2>Bem-vindo à Barbearia Santos</h2>
-            <p>Cortes clássicos e modernos para todos os estilos!</p>
-            <a href="#equipe" class="btn">Agende Com a Equipe</a>
+        <div class="banner">
+            <div class="banner-content">
+                <h2>Bem-vindo à Barbearia Santos</h2>
+                <p>Cortes clássicos e modernos para todos os estilos!</p>
+                <a href="#equipe" class="btn">Agende Com a Equipe</a>
+                
+            </div>
         </div>
-    </div>
     </section>
+            <div id="mapsobre"></div>
 
     <!-- Sobre -->
     <section id="sobre">
@@ -66,7 +72,7 @@
                     <li>Agendamento rápido via WhatsApp</li>
                 </ul>
             </div>
-
+            <div id="mapservicos"></div>
             <a href="#" class="btn-sobre">Agendar pelo WhatsApp</a>
         </div>
 
@@ -259,5 +265,6 @@
 
 <script src="Assets/js/swiper-bundle.min.js"></script>
 <script src="Assets/js/main.js"></script>
+<script src="Assets/js/header.js"></script>
 </body>
 </html>
